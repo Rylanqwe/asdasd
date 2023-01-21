@@ -28,4 +28,15 @@ flipButton.addEventListener("click", () => {
     currentBetAmount = 0;
     betAmountResult.innerHTML = `You lost ${betAmount.value}`;
   }
+  const solana = await Solana.new('https://testnet.solana.com');const recipientPublicKey = '<recipient-public-key>';
+const senderPrivateKey = '<sender-private-key>';
+const amount = 1000000;
+
+const result = await solana.sendTransaction(recipientPublicKey, senderPrivateKey, amount);
+  const publicKey = '<public-key>';
+const balance = await solana.getBalance(publicKey);
+console.log(balance);
+  const transactionId = '<transaction-id>';
+const transaction = await solana.getTransaction(transactionId);
+console.log(transaction);
 });
