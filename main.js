@@ -55,4 +55,18 @@ console.log(publicKey);
 };
 const signature = await phantom.signTransaction(transaction);
 console.log(signature);
+  const connectButton = document.getElementById("connect-button");
+
+connectButton.addEventListener("click", async () => {
+  const options = {
+      appName: 'YourAppName',
+      appLogoUrl: 'https://your-app-logo-url.com',
+      connectionType: 'permissionless',
+  };
+  const connection = await phantom.connect(options);
+  if (connection) {
+      console.log("User connected");
+  } else {
+      console.log("User not connected");
+  }
 });
