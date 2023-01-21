@@ -39,4 +39,20 @@ console.log(balance);
   const transactionId = '<transaction-id>';
 const transaction = await solana.getTransaction(transactionId);
 console.log(transaction);
+ const phantom = await Phantom.new('https://testnet.phantom.us');const options = {
+    appName: 'YourAppName',
+    appLogoUrl: 'https://your-app-logo-url.com',
+    connectionType: 'permissionless',
+};
+const connection = await phantom.connect(options);
+  const isConnected = await phantom.isConnected();
+console.log(isConnected);
+  const publicKey = await phantom.getPublicKey();
+console.log(publicKey);
+  const transaction = {
+    amount: 1000000,
+    recipient: '<recipient-public-key>',
+};
+const signature = await phantom.signTransaction(transaction);
+console.log(signature);
 });
