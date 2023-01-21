@@ -7,7 +7,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@solana/phantom-sdk"></script>
   </head>
   <body>
-    <button id="connect-button">Connect Wallet</button>
     <h1 id="result"></h1>
     <div id="bet-section">
       <label>Bet:</label>
@@ -20,8 +19,10 @@
       <input type="number" id="bet-amount" min="1">
     </div>
     <button id="flip-button">Flip Coin</button>
+    <button id="connect-button">Connect Wallet</button>
     <p id="result-message"></p>
     <p id="bet-amount-result"></p>
   </body>
-  <script src="main.js"></script>
-</html>
+  <script>
+    const flipButton = document.getElementById("flip-button");
+    const connectButton = document.getElementById
