@@ -52,6 +52,23 @@ let publicKey;
       const signature = await phantom.signTransaction(transaction);
       await solana.sendTransaction(transaction, signature);
     }
-  });
+    const connectButton = document.getElementById("connect-button");
+
+connectButton.addEventListener("click", async () => {
+    try {
+        await phantom.connect();
+        const isConnected = await phantom.isConnected();
+        if (isConnected) {
+            console.log("User connected");
+        } else {
+            console.log("User not connected");
+        }
+    } catch (error) {
+        console.error(error);
+    }
+  const publicKey = await phantom.getPublicKey();
+console.log(`Public key: ${publicKey}`);
+
+});
 
   connectButton.add
